@@ -17,7 +17,7 @@ module.exports = function () {
             args: ['start-maximized']
         },
         path: chromedriver.path
-    }).usingServer('http://localhost:4444/wd/hub').build();
+    }).usingServer('http://107.21.183.120:4444/wd/hub').build();
 
     driver.manage().window()/*.maximize()*/;
 
