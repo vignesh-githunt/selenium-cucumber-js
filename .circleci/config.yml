@@ -8,7 +8,9 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
-      - image: selenium/standalone-chrome:3.11.0
+      - image: selenium/hub
+      - image: selenium/node-chrome-debug
+ #     - image: selenium/standalone-chrome:3.11.0
       
       # Specify service dependencies here if necessary  
       # CircleCI maintains a library of pre-built images
@@ -40,11 +42,11 @@ jobs:
      
       - run:
           name: install selenium-hub
-          command: docker run -d --rm -p 4444:4444 --net grid --name selenium-hub selenium/hub:3.11.0
+          command: docker run -d --rm -p 4444:4444 --net grid --name selenium-hub selenium/hub
           
       - run:
           name: install selenium-node
-          command: docker run -d --rm --net grid -e HUB_HOST=selenium-hub -v /dev/shm:/dev/shm selenium/node-chrome:3.11.0
+          command: docker run -d -p 5900:5900 --net grid --link selenium-hub:hub -v /dev/shm:/dev/shm selenium/node-chrome-debug
       
       - run:
           name: install-npm
