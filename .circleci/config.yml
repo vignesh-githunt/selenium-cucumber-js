@@ -8,9 +8,9 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
- #     - image: selenium/hub
-#      - image: selenium/node-chrome-debug
- #     - image: selenium/standalone-chrome:3.11.0
+      - image: selenium/hub
+      - image: selenium/node-chrome-debug
+      - image: selenium/standalone-chrome:3.11.0
       
       # Specify service dependencies here if necessary  
       # CircleCI maintains a library of pre-built images
