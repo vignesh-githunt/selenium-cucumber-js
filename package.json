@@ -53,7 +53,7 @@
     "electron-prebuilt": "^1.4.13",
     "eyes.selenium": "0.0.72",
     "fs-plus": "2.9.1",
-    "geckodriver": "1.1.2",
+    "geckodriver": "1.22.3",
     "merge": "2.1.1",
     "phantomjs-prebuilt": "2.1.16",
     "require-dir": "0.3.2",
